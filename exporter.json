@@ -1,0 +1,53 @@
+{
+    "id": "io.supernova.ios-swiftui",
+    "name": "iOS SwiftUI",
+    "description": "iOS SwiftUI token and style exporter",
+    "source_dir": "src",
+    "version": "1.0.1",
+    "tags": [
+        "iOS",
+        "SwiftUI",
+        "Tokens",
+        "Styles",
+        "Colors",
+        "Borders",
+        "Gradients",
+        "Measures",
+        "Typography",
+        "Radii"
+    ],
+    "author": "Vaclav Lustek",
+    "organization": "Supernova",
+    "homepage": "https://supernova.io",
+    "config": {
+        "output": "output.json",
+        "sources": "sources.json",
+        "js": "src/functions.js"
+    },
+    "contributes": {
+        "configuration": [
+            {
+                "key": "some_string",
+                "label": "Some string",
+                "type": "string",
+                "default": "String placeholder"
+            },
+            {
+                "key": "some_number",
+                "label": "Some number",
+                "type": "number",
+                "default": 69
+            },
+            {
+                "key": "some_boolean",
+                "label": "Some boolean",
+                "type": "boolean",
+                "default": true
+            }
+        ]
+    },
+    "engines": {
+        "pulsar": "1.0.0",
+        "supernova": "1.0.0"
+    }
+}
