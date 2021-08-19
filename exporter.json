@@ -1,12 +1,12 @@
 {
-    "id": "io.supernova.documentation-main",
-    "name": "Documentation (test)",
-    "description": "Test Supernova documentation exporter",
-    "author": "Jiri Trecak",
+    "id": "io.supernova.documentation-custom-properties",
+    "name": "Documentation (custom properties)",
+    "description": "Test Supernova documentation exporter custom properties",
+    "author": "Vaclav Lustek",
     "organization": "Supernova",
     "source_dir": "src",
     "assets_dir": "assets",
-    "version": "1.2.7",
+    "version": "1.0.0",
     "config": {
         "sources": "sources.json",
         "output": "output.json",
