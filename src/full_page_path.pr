@@ -1,0 +1,2 @@
+{[ const page = @ds.docs.pageById(pageId) /]}
+{{ @js.pageUrl(page, @init.null()) }}

@@ -1,0 +1,23 @@
+{* Retrieve page object from context *}
+{[ const page = context /]}
+{[ const domain = @ds.docs.configuration().domain /]}
+{* Generate header styles *}
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="{{ @js.assetUrl("vendor/bootstrap/css/bootstrap.min.css", domain) }}" />
+
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="{{ @js.assetUrl("vendor/font-awesome/css/all.min.css", domain) }}" />
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="{{ @js.assetUrl("vendor/magnific-popup/magnific-popup.min.css", domain) }}" />
+
+<!-- Search -->
+<link rel="stylesheet" type="text/css" href="{{ @js.assetUrl("css/search.css", domain) }}" />
+
+<!-- DS Autogen -->
+<link rel="stylesheet" type="text/css" href="{{ @js.assetUrl("css/ds/index.css", domain) }}" />
+
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="{{ @js.assetUrl("css/stylesheet.css", domain) }}" />
+
+

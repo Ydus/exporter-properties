@@ -1,5 +1,7 @@
 {
-    "colors.pr": {
-        "targets_ci": true
+    "full_page.pr": {
+        "targets_ci": true,
+        "targets_documentation": true,
+        "context": "documentationPage"
     }
 }
