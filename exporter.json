@@ -26,32 +26,32 @@
                 "key": "custom_string",
                 "type": "string",
                 "category": "Custom properties",
-                "label": "Custom string",
-                "description": "Le custom string",
+                "label": "Custom string with long description",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur.",
                 "default": "Hue hue hue"
             },
             {
                 "key": "custom_number",
                 "type": "number",
                 "category": "Custom properties",
-                "label": "Custom number",
-                "description": "Le custom number",
+                "label": "Custom number with long description",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur.",
                 "default": 69
             },
             {
                 "key": "custom_boolean",
                 "type": "boolean",
                 "category": "Custom properties",
-                "label": "Custom boolean",
-                "description": "Le custom boolean",
+                "label": "Custom boolean with long description",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur.",
                 "default": true
             },
             {
                 "key": "custom_enum",
                 "type": "enum",
                 "category": "Custom properties",
-                "label": "Custom enum",
-                "description": "Le custom enum",
+                "label": "Custom enum with long description",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur.",
                 "values": ["First", "Second", "Third"],
                 "default": "Second"
             },
@@ -59,8 +59,44 @@
                 "key": "custom_image",
                 "type": "image",
                 "category": "Custom properties",
+                "label": "Custom image with long description",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur."
+            },
+
+            {
+                "key": "custom_string_no_desc",
+                "type": "string",
+                "category": "Custom properties",
+                "label": "Custom string",
+                "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur."
+            },
+            {
+                "key": "custom_number_no_desc",
+                "type": "number",
+                "category": "Custom properties",
+                "label": "Custom number",
+                "default": 420
+            },
+            {
+                "key": "custom_boolean_no_desc",
+                "type": "boolean",
+                "category": "Custom properties",
+                "label": "Custom boolean",
+                "default": false
+            },
+            {
+                "key": "custom_enum_no_desc",
+                "type": "enum",
+                "category": "Custom properties",
+                "label": "Custom enum",
+                "values": ["First", "Second", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur."],
+                "default": "Second"
+            },
+            {
+                "key": "custom_image_no_desc",
+                "type": "image",
+                "category": "Custom properties",
                 "label": "Custom image",
-                "description": "Le custom image"
             },
             {
                 "key": "custom_string_2",
