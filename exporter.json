@@ -96,7 +96,7 @@
                 "key": "custom_image_no_desc",
                 "type": "image",
                 "category": "Custom properties",
-                "label": "Custom image",
+                "label": "Custom image"
             },
             {
                 "key": "custom_string_2",
