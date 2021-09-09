@@ -62,6 +62,20 @@
                 "label": "Custom image with long description",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur."
             },
+            {
+                "key": "custom_color",
+                "type": "color",
+                "category": "Custom properties",
+                "label": "Custom color with long description",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur.",
+            },
+            {
+                "key": "custom_typography",
+                "type": "typography",
+                "category": "Custom properties",
+                "label": "Custom typography with long description",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget vehicula odio. Phasellus gravida scelerisque faucibus. Pellentesque tincidunt mauris elementum diam fringilla consectetur."
+            },
 
             {
                 "key": "custom_string_no_desc",
@@ -98,6 +112,19 @@
                 "category": "Custom properties",
                 "label": "Custom image"
             },
+            {
+                "key": "custom_color_no_desc",
+                "type": "color",
+                "category": "Custom properties",
+                "label": "Custom color"
+            },
+            {
+                "key": "custom_typography_no_desc",
+                "type": "typography",
+                "category": "Custom properties",
+                "label": "Custom typography"
+            },
+
             {
                 "key": "custom_string_2",
                 "type": "string",
