@@ -1,3 +1,0 @@
-{[ let pages = @ds.docs.allPages() /]}
-{[ let domain = @ds.docs.configuration().domain /]}
-{{ @js.buildSearchIndexJSON(pages, domain) }}

@@ -1,5 +1,7 @@
 {[ let page = context /]}
-{[ const domain = @ds.docs.configuration().domain /]}
+{[ let domain = ds.documentationDomain() /]}
+{[ let configuration = exportConfiguration() /]}
+{[ const shouldShowTabbar = ds.documentationConfiguration().settings.tabbedNavigation /]}
 
 <!-- Header --> 
 <header id="header" class="sticky-top"> 
@@ -8,39 +10,82 @@
     <nav class="primary-menu navbar navbar-expand-lg navbar-text-dark">
 
         <!-- Logo -->
-        <div class="logo-wrapper">
-            <div class="logo-inner">
-                <img src="{{ @js.assetUrl("logos/logo-main.png", domain) }}" title="Stark Industries" alt="Stark Industries" />
+
+        <!-- Sidebar Toggler -->
+        <button id="sidebarCollapse" class="toggle-navbar" type="button"></button>
+
+        <!-- Redirect to the first real page on logo click -->
+        {[ let rootGroup = ds.rootDocumentationGroup() /]}
+        {[ let topPage = firstPageFromTop(rootGroup) /]}
+        {[ let url = pageUrl(topPage, ds.documentationDomain()) /]}
+        <a href="{{ url }}">
+            <div class="logo-wrapper">
+            {* Use default Supernova logo OR custom uploaded one, if it was provided *}
+                {[ if ((configuration.headerLogo !== null) && (configuration.headerLogo.assetUrl !== null)) ]}
+                    <img class="default" src="{{ exportConfiguration().headerLogo.assetUrl }}" alt="Our Documentation" style="content: none" />
+                {[ else ]}
+                    <img class="default" alt="Our Documentation" />
+                {[/]}
             </div>
-        </div>
+        </a>
 
         <div class="container-fluid">
 
-        <!-- Sidebar Toggler -->
-        <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span></span></button>
-
         <!-- Potential Left Link Here -->
-        <div id="header-nav" class="collapse navbar-collapse">
+        <div id="header-nav" class="navbar-collapse">
             <ul class="navbar-nav">
-                {[ let rootGroup = @ds.docs.rootGroup() /]}
-                {[ for item in rootGroup.children ]}
-                    {* Re-enable if we only want to show groups *}
-                    {* {[ if item.type.equals("Group") ]} *}
-                        {[ let activeClass = @boolean.ternaryValue(@compare.equals(@js.pageOrGroupActiveInContext(page, item), true), "active", "") /]}
-                        <li><a class="typographyDocsViewNavigation {{ activeClass }}" href="{{ @js.pageUrl(item, @ds.docs.configuration().domain) }}">{{ item.title }}</a></li>
-                    {* {[/]} *}
+                {[ if shouldShowTabbar ]}
+                    {[ for item in rootGroup.children ]}
+                        {* Re-enable if we only want to show groups *}
+                        {* {[ if item.type.equals("Group") ]} *}
+                            {[ let activeClass = (pageOrGroupActiveInContext(page, item) === true ? "active" : "") /]}
+                            <li><a class="typographyDocsViewNavigation {{ activeClass }}" href="{{ pageUrl(item, ds.documentationDomain()) }}">{{ item.title }}</a></li>
+                        {* {[/]} *}
+                    {[/]}
                 {[/]}
             </ul>
 
-            <div class="utility-nav">            
+
+            <div class="utility-nav">
+            
+            {[ if shouldShowTabbar ]}
+            <div id="mobile-menu-container" class="dropdown">
+                <button class="btn btn-secondary btn-outlined" type="button" id="mobile-menu-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   
+                    
+                        {[ for item in rootGroup.children ]}
+                            {* Re-enable if we only want to show groups *}
+                            {* {[ if item.type.equals("Group") ]} *}
+                                {[ let isActive = pageOrGroupActiveInContext(page, item) /]}
+                                {[ if isActive ]}
+                                    {{ item.title }}
+                                {[/]}
+                            {* {[/]} *}
+                        {[/]}
+                </button>
+                <div class="dropdown-menu pull-right" aria-labelledby="mobile-menu-selector">
+                    {[ for item in rootGroup.children ]}
+                        {* Re-enable if we only want to show groups *}
+                        {* {[ if item.type.equals("Group") ]} *}
+                            {[ let activeClass = (pageOrGroupActiveInContext(page, item) === true ? "checked" : "") /]}
+                            <a class="dropdown-item {{ activeClass }}" href="{{ pageUrl(item, ds.documentationDomain()) }}">{{ item.title }}</a>
+                        {* {[/]} *}
+                    {[/]}
+                </div>
+            </div>
+            {[/]}
+
             <div id="version-container" class="dropdown">
-                <button class="btn btn-secondary" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary btn-outlined" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Loading
                 </button>
                 <div class="dropdown-menu pull-right" aria-labelledby="version-selector">
                 </div>
             </div>
             <i class="fas fa-search search"></i>
+            {* {[ if exportConfiguration().showVisualModeSwitch ]} - hard-disabled for now, until full customization is in place *}
+            {[ if false ]}
+            <i class="far fa-moon switch-theme"></i>
+            {[/]}
             </div>
             
         </div>

@@ -1,6 +1,5 @@
 {
-    "blueprints": [
-        {
+    "blueprints": [{
             "invoke": "full_page.pr",
             "write_using": "full_page_path.pr",
             "comment": "Main blueprint that is invoked for each page. This blueprint is invoked exactly as many times as there are pages, with different `pageId`"
@@ -13,14 +12,22 @@
         {
             "invoke": "search_index.pr",
             "write_to": "si.js",
-            "comment": "Create index data for the entire documentation to be used with lunr.js"
+            "comment": "Create index data for the entire documentation to be used with fuse.js"
+        },
+        {
+            "invoke": "custom_styling.pr",
+            "write_to": "assets/css/custom.css",
+            "comment": "Create file containing custom styling information"
+        },
+        {
+            "invoke": "sitemap.pr",
+            "write_to": "sitemap.xml",
+            "comment": "Create file containing documentation sitemap"
         }
     ],
-    "assets": [
-        {
-            "asset": "*",
-            "write_to": "assets",
-            "comment": "Copy all assets defined inside /asset directory into /asset directory on the output"
-        }
-    ]
+    "resources": [{
+        "resource": "*",
+        "write_to": "assets",
+        "comment": "Copy all resources defined inside /asset directory into /asset directory on the output"
+    }]
 }
